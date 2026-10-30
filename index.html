@@ -1,0 +1,445 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>XUNG · Công nghệ xứng tầm</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/home.css" />
+  </head>
+  <body>
+    <!-- ========== HEADER (dùng chung các trang) ========== -->
+    <header>
+      <div class="announce">
+        <span>NÂNG CẤP HIỆU NĂNG • Ưu đãi đến 4.000.000đ</span>
+        <a href="san-pham.html">Khám phá ngay →</a>
+      </div>
+
+      <div class="topbar">
+        <a class="brand" href="index.html">
+          <img src="images/icons/zap.svg" alt="" />
+          <span class="brand-name">XUNG</span>
+          <span class="brand-dot"></span>
+        </a>
+
+        <label class="search">
+          <img src="images/icons/search.svg" alt="" />
+          <input
+            type="search"
+            data-site-search
+            placeholder="Bạn đang tìm thiết bị nào?"
+          />
+          <kbd>⌘ K</kbd>
+        </label>
+
+        <div class="consult">
+          <img src="images/icons/headphones.svg" alt="" />
+          <div><small>Tư vấn miễn phí</small><strong>1800 6868</strong></div>
+        </div>
+
+        <a class="top-link" href="tai-khoan.html" data-account-link>
+          <img src="images/icons/user-round.svg" alt="" />
+          <span>Đăng nhập</span>
+        </a>
+
+        <a class="top-link" href="gio-hang.html">
+          <img src="images/icons/shopping-bag.svg" alt="" />
+          <span>Giỏ hàng</span>
+          <span class="cart-count" id="cartCount">0</span>
+        </a>
+      </div>
+
+      <nav class="nav">
+        <a class="active" href="index.html">Trang chủ</a>
+        <a href="san-pham.html?category=laptop">Laptop</a>
+        <a href="san-pham.html?category=phone">Điện thoại</a>
+        <a href="san-pham.html?category=accessory">Phụ kiện</a>
+        <a href="san-pham.html?sort=sale">Khuyến mãi</a>
+        <span class="pledge">
+          <img src="images/icons/shield-check.svg" alt="" />
+          Chính hãng 100% · Bảo hành tận tâm
+        </span>
+      </nav>
+    </header>
+
+    <main>
+      <!-- ========== HERO ========== -->
+      <section class="hero">
+        <div class="hero-bg bg-glow">
+          <img src="images/bg/glow.svg" alt="" />
+        </div>
+        <div class="hero-bg bg-orbit-out">
+          <img src="images/bg/orbit-outer.svg" alt="" />
+        </div>
+        <div class="hero-bg bg-orbit-in">
+          <img src="images/bg/orbit-inner.svg" alt="" />
+        </div>
+        <div class="hero-bg bg-diagonal">
+          <img src="images/bg/diagonal.svg" alt="" />
+        </div>
+        <div class="hero-bg bg-streak"><i></i></div>
+
+        <div class="hero-content">
+          <div class="hero-text">
+            <div class="campaign-label">XUNG BLADE 16 · THẾ HỆ MỚI</div>
+            <h1>Đánh thức<br />mọi giới hạn.</h1>
+            <p class="hero-desc">
+              Sức mạnh RTX 4060. Màn hình 165Hz. Sẵn sàng cho mọi trận đấu và
+              những ý tưởng lớn.
+            </p>
+            <div class="hero-price">
+              <span>Chỉ từ</span><strong>32.990.000đ</strong>
+            </div>
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="chi-tiet.html?id=blade-16"
+                >Khám phá Blade 16
+                <img src="images/icons/arrow-up-right.svg" alt=""
+              /></a>
+              <a class="btn btn-secondary" href="san-pham.html?category=laptop"
+                >Xem tất cả laptop</a
+              >
+            </div>
+          </div>
+
+          <div class="hero-stage">
+            <img src="images/products/hero-blade-16.png" alt="XUNG Blade 16" />
+            <div class="hero-specs">
+              <span>RTX 4060 8GB</span><span>165Hz · 2.5K</span
+              ><span>Tản nhiệt kép</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-controls">
+          <div class="dots"><i class="on"></i><i></i><i></i></div>
+          <span class="hero-counter">01 / 03</span>
+          <div class="arrows">
+            <img src="images/icons/arrow-left.svg" alt="Trước" />
+            <img src="images/icons/arrow-right.svg" alt="Sau" />
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== CAM KẾT ========== -->
+      <section class="promises">
+        <div class="promise">
+          <img src="images/icons/badge-check.svg" alt="" />
+          <div>
+            <strong>100% chính hãng</strong><span>Nguồn gốc rõ ràng</span>
+          </div>
+        </div>
+        <div class="promise">
+          <img src="images/icons/truck.svg" alt="" />
+          <div>
+            <strong>Giao nhanh 2 giờ</strong
+            ><span>Tại TP. HCM &amp; Hà Nội</span>
+          </div>
+        </div>
+        <div class="promise">
+          <img src="images/icons/refresh-cw.svg" alt="" />
+          <div>
+            <strong>Đổi mới trong 30 ngày</strong
+            ><span>Nếu có lỗi nhà sản xuất</span>
+          </div>
+        </div>
+        <div class="promise">
+          <img src="images/icons/credit-card.svg" alt="" />
+          <div>
+            <strong>Trả góp 0% lãi suất</strong
+            ><span>Duyệt nhanh, thủ tục gọn</span>
+          </div>
+        </div>
+      </section>
+
+      <div class="shop">
+        <!-- ========== DANH MỤC ========== -->
+        <section class="block">
+          <div class="section-head">
+            <h2 class="section-title">Bạn muốn nâng cấp điều gì?</h2>
+            <a class="section-link" href="san-pham.html">Tất cả danh mục →</a>
+          </div>
+          <div class="categories">
+            <a class="category" href="san-pham.html?category=laptop">
+              <div class="category-info">
+                <b>Laptop</b><small>Hiệu năng không giới hạn</small
+                ><img src="images/icons/arrow-up-right-cat.svg" alt="" />
+              </div>
+              <img src="images/categories/laptop.png" alt="" />
+            </a>
+            <a class="category" href="san-pham.html?category=phone">
+              <div class="category-info">
+                <b>Điện thoại</b><small>Kết nối theo cách của bạn</small
+                ><img src="images/icons/arrow-up-right-cat.svg" alt="" />
+              </div>
+              <img src="images/categories/phone.png" alt="" />
+            </a>
+            <a class="category" href="san-pham.html?category=accessory">
+              <div class="category-info">
+                <b>Âm thanh</b><small>Đắm chìm trong từng nhịp</small
+                ><img src="images/icons/arrow-up-right-cat.svg" alt="" />
+              </div>
+              <img src="images/categories/audio.png" alt="" />
+            </a>
+            <a class="category" href="san-pham.html?category=accessory">
+              <div class="category-info">
+                <b>Phụ kiện</b><small>Hoàn thiện góc công nghệ</small
+                ><img src="images/icons/arrow-up-right-cat.svg" alt="" />
+              </div>
+              <img src="images/categories/accessory.png" alt="" />
+            </a>
+          </div>
+        </section>
+
+        <!-- ========== SẢN PHẨM NỔI BẬT (JS vẽ thẻ vào #featuredGrid) ========== -->
+        <section class="block">
+          <div class="section-head">
+            <div>
+              <div class="eyebrow">ĐƯỢC YÊU THÍCH TẠI XUNG</div>
+              <h2 class="section-title">Hiệu năng thật. Giá xứng đáng.</h2>
+            </div>
+            <a class="section-link" href="san-pham.html"
+              >Xem tất cả sản phẩm →</a
+            >
+          </div>
+          <div class="chips" id="chips">
+            <button class="chip active" data-filter="all">Bán chạy nhất</button>
+            <button class="chip" data-filter="laptop">Laptop</button>
+            <button class="chip" data-filter="phone">Điện thoại</button>
+            <button class="chip" data-filter="accessory">Phụ kiện</button>
+          </div>
+          <div class="grid-4" id="featuredGrid"></div>
+        </section>
+
+        <!-- ========== BANNER NOVA ========== -->
+        <section class="banner">
+          <div class="banner-text">
+            <span class="tag hot">XUNG NOVA PRO</span>
+            <h2>Mỗi khoảnh khắc. Một dấu ấn.</h2>
+            <p>
+              Camera 50MP. Màn hình AMOLED 120Hz. Thiết kế titan, tinh tế từ mọi
+              góc nhìn.
+            </p>
+            <div class="banner-buy">
+              <strong>21.990.000đ</strong>
+              <a class="btn btn-primary" href="chi-tiet.html?id=nova-pro"
+                >Khám phá ngay <img src="images/icons/arrow-right.svg" alt=""
+              /></a>
+            </div>
+          </div>
+          <img src="images/banners/nova-pro.png" alt="XUNG Nova Pro" />
+        </section>
+
+        <!-- ========== PHỤ KIỆN (JS vẽ thẻ vào #accessoryGrid) ========== -->
+        <section class="block">
+          <div class="section-head">
+            <div>
+              <div class="eyebrow">NHỎ GỌN. KHÁC BIỆT LỚN.</div>
+              <h2 class="section-title">Thêm chất cho bộ thiết bị.</h2>
+            </div>
+            <a class="section-link" href="san-pham.html?category=accessory"
+              >Khám phá phụ kiện →</a
+            >
+          </div>
+          <div class="grid-4" id="accessoryGrid">
+            <!-- Thẻ thứ 4 là thẻ ưu đãi, viết sẵn trong HTML; JS chèn 3 thẻ sản phẩm vào TRƯỚC thẻ này -->
+            <div class="promo" id="promoCard">
+              <img src="images/icons/gift.svg" alt="" />
+              <h3>Đi cùng nhau. Lợi hơn nhiều.</h3>
+              <p>
+                Giảm thêm 500.000đ khi mua laptop cùng phụ kiện. Áp dụng mã
+                XUNG500.
+              </p>
+              <a
+                class="btn btn-secondary"
+                href="san-pham.html?category=accessory"
+                >Chọn bộ của bạn</a
+              >
+              <small>Đơn từ 20 triệu · Đến 30/11/2026</small>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <!-- ========== DỊCH VỤ ========== -->
+      <section class="services">
+        <div class="services-intro">
+          <div class="eyebrow">KHÔNG CHỈ LÀ MUA SẮM</div>
+          <h2>Chọn đúng thiết bị. An tâm dài lâu.</h2>
+        </div>
+        <div class="service">
+          <img src="images/icons/messages-square.svg" alt="" /><b
+            >Tư vấn thật, hiểu bạn thật</b
+          >
+          <p>Chọn cấu hình theo nhu cầu, không theo giá cao nhất.</p>
+        </div>
+        <div class="service">
+          <img src="images/icons/wrench.svg" alt="" /><b
+            >Chăm sóc sau mỗi lần mua</b
+          >
+          <p>Cài đặt miễn phí, vệ sinh và kiểm tra thiết bị định kỳ.</p>
+        </div>
+        <div class="service">
+          <img src="images/icons/store.svg" alt="" /><b
+            >Trải nghiệm trước khi chọn</b
+          >
+          <p>Đến cửa hàng để chạm, thử và tìm thiết bị phù hợp.</p>
+        </div>
+      </section>
+
+      <!-- ========== BÀI VIẾT ========== -->
+      <section class="articles">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">GÓC NHÌN XUNG</div>
+            <h2 class="section-title">Công nghệ, gần bạn hơn.</h2>
+          </div>
+          <a class="section-link" href="#">Đọc tất cả bài viết →</a>
+        </div>
+        <div class="article-grid">
+          <a class="article" href="#"
+            ><img src="images/articles/bai-1.png" alt="" /><span class="kind"
+              >TƯ VẤN</span
+            >
+            <h3>Chọn laptop đồ họa: mạnh thôi đã đủ?</h3>
+            <time>24.10.2026 · 6 phút đọc</time></a
+          >
+          <a class="article" href="#"
+            ><img src="images/articles/bai-2.png" alt="" /><span class="kind"
+              >TRẢI NGHIỆM</span
+            >
+            <h3>Một ngày cùng Nova Pro: từ sáng đến đêm</h3>
+            <time>22.10.2026 · 5 phút đọc</time></a
+          >
+          <a class="article" href="#"
+            ><img src="images/articles/bai-3.png" alt="" /><span class="kind"
+              >CẢM HỨNG</span
+            >
+            <h3>Góc làm việc tối giản, hiệu suất tối đa</h3>
+            <time>20.10.2026 · 4 phút đọc</time></a
+          >
+        </div>
+      </section>
+
+      <!-- ========== ĐÁNH GIÁ ========== -->
+      <section class="reviews">
+        <div class="section-head">
+          <h2 class="section-title">Được tin chọn, mỗi ngày.</h2>
+          <a class="section-link" href="#">4,9/5 từ hơn 2.000 khách hàng →</a>
+        </div>
+        <div class="review-grid">
+          <div class="review">
+            <div class="stars">★★★★★</div>
+            <q
+              >“Máy chạy đồ họa rất mượt, tản nhiệt ổn. Bạn tư vấn giúp mình
+              chọn đúng cấu hình, không phải mua thừa.”</q
+            >
+            <div class="buyer">
+              <div class="avatar">MA</div>
+              <div><b>Minh Anh</b><small>✓ Đã mua XUNG Blade 16</small></div>
+            </div>
+          </div>
+          <div class="review">
+            <div class="stars">★★★★★</div>
+            <q
+              >“Đặt buổi sáng, chiều đã nhận máy. Đóng gói cẩn thận, được hỗ trợ
+              chuyển dữ liệu rất nhiệt tình.”</q
+            >
+            <div class="buyer">
+              <div class="avatar">QH</div>
+              <div><b>Quang Huy</b><small>✓ Đã mua XUNG Nova Pro</small></div>
+            </div>
+          </div>
+          <div class="review">
+            <div class="stars">★★★★★</div>
+            <q
+              >“Chống ồn tốt khi làm việc ở quán cà phê. Nhỏ gọn, pin lâu và kết
+              nối với laptop rất nhanh.”</q
+            >
+            <div class="buyer">
+              <div class="avatar">TL</div>
+              <div><b>Thảo Linh</b><small>✓ Đã mua XUNG Pulse Buds</small></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== ĐĂNG KÝ NHẬN TIN ========== -->
+      <section class="newsletter">
+        <div class="newsletter-text">
+          <h2>Bắt nhịp công nghệ. Đón ưu đãi riêng.</h2>
+          <p>
+            Nhận tin sản phẩm mới và mã giảm giá từ XUNG. Không làm phiền bạn.
+          </p>
+        </div>
+        <form class="newsletter-form" id="newsletterForm">
+          <div class="newsletter-row">
+            <input type="email" placeholder="Nhập email của bạn" required />
+            <button class="btn btn-primary" type="submit">Đăng ký</button>
+          </div>
+          <small
+            >Đăng ký đồng nghĩa bạn đồng ý với Chính sách bảo mật của
+            XUNG.</small
+          >
+        </form>
+      </section>
+    </main>
+
+    <!-- ========== FOOTER (dùng chung các trang) ========== -->
+    <footer class="footer">
+      <div class="footer-main">
+        <div class="footer-brand">
+          <a class="brand" href="index.html">
+            <img src="images/icons/zap.svg" alt="" />
+            <span class="brand-name">XUNG</span>
+            <span class="brand-dot"></span>
+          </a>
+          <p>
+            Công nghệ xứng tầm. Hiệu năng bứt phá. Đồng hành cùng lựa chọn tiếp
+            theo của bạn.
+          </p>
+          <p class="hotline">1800 6868 · 8:00–22:00 mỗi ngày</p>
+          <p class="contact">hello@xung.vn · 128 Nguyễn Huệ, TP. HCM</p>
+        </div>
+        <div class="footer-col">
+          <h4>Khám phá XUNG</h4>
+          <a href="san-pham.html">Cửa hàng</a><a href="#">Hệ thống cửa hàng</a
+          ><a href="#">Tạp chí công nghệ</a><a href="#">Tuyển dụng</a>
+        </div>
+        <div class="footer-col">
+          <h4>Hỗ trợ khách hàng</h4>
+          <a href="gio-hang.html">Giỏ hàng</a><a href="#">Chính sách bảo hành</a
+          ><a href="#">Đổi trả &amp; hoàn tiền</a
+          ><a href="#">Giao hàng &amp; thanh toán</a>
+        </div>
+        <div class="footer-col">
+          <h4>An tâm mua sắm</h4>
+          <a href="#">Chính sách bảo mật</a><a href="#">Điều khoản sử dụng</a
+          ><a href="#">Trả góp 0%</a><a href="#">Hướng dẫn mua hàng</a>
+        </div>
+      </div>
+      <hr />
+      <div class="footer-legal">
+        <span
+          >© 2026 XUNG. Công ty TNHH Công nghệ Xung. Đã đăng ký bản quyền.</span
+        >
+        <span
+          >VISA &nbsp; / &nbsp; Mastercard &nbsp; / &nbsp; MoMo &nbsp; / &nbsp;
+          VNPAY</span
+        >
+      </div>
+    </footer>
+
+    <script src="js/api.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/store.js"></script>
+    <script src="js/auth.js"></script>
+  </body>
+</html>

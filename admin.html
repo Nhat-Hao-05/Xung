@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Khu vực quản trị cửa hàng XUNG." />
+    <title>Quản trị | XUNG</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/pages.css" />
+    <link rel="stylesheet" href="css/admin.css" />
+  </head>
+  <body>
+    <header>
+      <div class="topbar">
+        <a class="brand" href="index.html">
+          <img src="images/icons/zap.svg" alt="" />
+          <span class="brand-name">XUNG</span>
+          <span class="brand-dot"></span>
+        </a>
+        <span class="admin-top-label">Bảng điều khiển quản trị</span>
+        <a class="top-link" href="tai-khoan.html" data-account-link>
+          <img src="images/icons/user-round.svg" alt="" />
+          <span>Đăng nhập</span>
+        </a>
+      </div>
+      <nav class="nav">
+        <a href="index.html">Cửa hàng</a>
+        <a href="san-pham.html">Sản phẩm</a>
+        <a class="active" href="admin.html" aria-current="page" data-admin-link>Quản trị</a>
+        <span class="pledge">Chỉ dành cho quản trị viên</span>
+      </nav>
+    </header>
+
+    <main class="page-shell admin-page">
+      <div class="admin-heading">
+        <div>
+          <p class="eyebrow">XUNG / QUẢN TRỊ</p>
+          <h1>Hoạt động cửa hàng</h1>
+          <p class="page-intro">Theo dõi đơn hàng, hàng tồn và cập nhật cửa hàng.</p>
+        </div>
+        <a class="admin-back-link" href="index.html">← Về cửa hàng</a>
+      </div>
+
+      <div class="admin-alert" id="adminAlert" role="status" aria-live="polite" hidden></div>
+
+      <section class="admin-stats" aria-label="Thống kê cửa hàng">
+        <article class="admin-stat">
+          <span>Sản phẩm đang bán</span><strong id="statProducts">—</strong>
+          <small id="statStockUnits">Đang tải dữ liệu</small>
+        </article>
+        <article class="admin-stat">
+          <span>Đơn chờ xác nhận</span><strong id="statPending">—</strong>
+          <small id="statOrders">Tổng đơn hàng</small>
+        </article>
+        <article class="admin-stat">
+          <span>Doanh thu hoàn tất</span><strong id="statRevenue">—</strong>
+          <small>Đơn đã hoàn thành</small>
+        </article>
+        <article class="admin-stat">
+          <span>Khách hàng hoạt động</span><strong id="statCustomers">—</strong>
+          <small id="statStockWarnings">Tồn kho</small>
+        </article>
+      </section>
+
+      <nav class="admin-tabs" aria-label="Khu vực quản trị">
+        <button class="admin-tab active" type="button" data-admin-tab="products">Sản phẩm</button>
+        <button class="admin-tab" type="button" data-admin-tab="orders">Đơn hàng</button>
+        <button class="admin-tab" type="button" data-admin-tab="inventory">Tồn kho</button>
+        <button class="admin-tab" type="button" data-admin-tab="users">Người dùng</button>
+      </nav>
+
+      <section class="admin-panel active" data-admin-panel="products">
+        <div class="admin-section-heading">
+          <div>
+            <h2>Danh mục sản phẩm</h2>
+            <p>Thêm sản phẩm mới, cập nhật thông tin hoặc ngừng bán.</p>
+          </div>
+          <button class="btn btn-primary" type="button" id="newProductButton">Thêm sản phẩm</button>
+        </div>
+
+        <form class="admin-product-form" id="productForm" hidden>
+          <div class="admin-form-heading">
+            <h3 id="productFormTitle">Thêm sản phẩm</h3>
+            <button type="button" class="admin-text-button" id="cancelProductButton">Đóng</button>
+          </div>
+          <input type="hidden" name="productId" />
+          <div class="admin-form-grid">
+            <label class="admin-field">Tên sản phẩm<input name="name" required maxlength="180" /></label>
+            <label class="admin-field">Slug<input name="slug" required maxlength="100" pattern="[a-z0-9]+(?:-[a-z0-9]+)*" /></label>
+            <label class="admin-field">Danh mục<select name="category" id="productCategory" required></select></label>
+            <label class="admin-field">Nhãn hiển thị<input name="tag" maxlength="80" placeholder="Ví dụ: MỚI RA MẮT" /></label>
+            <label class="admin-field">Giá bán (đ)<input name="price" type="number" min="0" step="1000" required /></label>
+            <label class="admin-field">Giá gốc (đ)<input name="oldPrice" type="number" min="0" step="1000" /></label>
+            <label class="admin-field">Tồn kho<input name="stock" type="number" min="0" step="1" required /></label>
+            <label class="admin-field">Đường dẫn ảnh<input name="image" required maxlength="500" placeholder="images/products/..." /></label>
+            <label class="admin-field admin-field-wide">Mô tả ngắn<input name="description" required maxlength="500" /></label>
+            <label class="admin-field admin-field-wide">Thông số<input name="spec" required maxlength="1000" /></label>
+            <label class="admin-field admin-field-wide">Chi tiết<textarea name="detail" required maxlength="1000" rows="3"></textarea></label>
+          </div>
+          <div class="admin-form-options">
+            <label><input name="hot" type="checkbox" /> Sản phẩm nổi bật</label>
+            <label><input name="active" type="checkbox" checked /> Đang hiển thị trên cửa hàng</label>
+          </div>
+          <button class="btn btn-primary" type="submit" id="saveProductButton">Lưu sản phẩm</button>
+        </form>
+
+        <div class="admin-table-wrap">
+          <table class="admin-table">
+            <thead><tr><th>Sản phẩm</th><th>Danh mục</th><th>Giá</th><th>Tồn kho</th><th>Trạng thái</th><th></th></tr></thead>
+            <tbody id="productsTable"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="admin-panel" data-admin-panel="orders" hidden>
+        <div class="admin-section-heading">
+          <div><h2>Đơn hàng</h2><p>Xem khách mua gì và cập nhật tiến độ xử lý.</p></div>
+          <button class="admin-refresh" type="button" data-refresh="orders">Làm mới</button>
+        </div>
+        <div class="admin-table-wrap">
+          <table class="admin-table admin-orders-table">
+            <thead><tr><th>Đơn hàng</th><th>Khách hàng</th><th>Sản phẩm</th><th>Tổng tiền</th><th>Trạng thái đơn</th><th>Thanh toán</th><th></th></tr></thead>
+            <tbody id="ordersTable"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="admin-panel" data-admin-panel="inventory" hidden>
+        <div class="admin-section-heading">
+          <div><h2>Tình hình tồn kho</h2><p>Sản phẩm còn tối đa 5 món được đánh dấu cần theo dõi.</p></div>
+          <button class="admin-refresh" type="button" data-refresh="products">Làm mới</button>
+        </div>
+        <div class="admin-table-wrap">
+          <table class="admin-table">
+            <thead><tr><th>Sản phẩm</th><th>Danh mục</th><th>Đã bán</th><th>Tồn hiện tại</th><th>Đánh giá kho</th></tr></thead>
+            <tbody id="inventoryTable"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="admin-panel" data-admin-panel="users" hidden>
+        <div class="admin-section-heading">
+          <div><h2>Người dùng</h2><p>Xem tài khoản khách và bật/tắt quyền truy cập cửa hàng.</p></div>
+          <button class="admin-refresh" type="button" data-refresh="users">Làm mới</button>
+        </div>
+        <div class="admin-table-wrap">
+          <table class="admin-table">
+            <thead><tr><th>Khách hàng</th><th>Email</th><th>Số điện thoại</th><th>Vai trò</th><th>Trạng thái</th><th></th></tr></thead>
+            <tbody id="usersTable"></tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+
+    <script src="js/api.js"></script>
+    <script src="js/store.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/admin.js"></script>
+  </body>
+</html>

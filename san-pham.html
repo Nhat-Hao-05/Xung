@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Sản phẩm | XUNG</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/pages.css" />
+  </head>
+  <body>
+    <header>
+      <div class="announce">
+        <span>NÂNG CẤP HIỆU NĂNG • Ưu đãi đến 4.000.000đ</span
+        ><a href="san-pham.html?sort=sale">Khám phá ngay →</a>
+      </div>
+      <div class="topbar">
+        <a class="brand" href="index.html"
+          ><img src="images/icons/zap.svg" alt="" /><span class="brand-name"
+            >XUNG</span
+          ><span class="brand-dot"></span
+        ></a>
+        <label class="search"
+          ><img src="images/icons/search.svg" alt="" /><input
+            type="search"
+            data-site-search
+            placeholder="Bạn đang tìm thiết bị nào?"
+          /><kbd>⌘ K</kbd></label
+        >
+        <div class="consult">
+          <img src="images/icons/headphones.svg" alt="" />
+          <div><small>Tư vấn miễn phí</small><strong>1800 6868</strong></div>
+        </div>
+        <a class="top-link" href="tai-khoan.html" data-account-link
+          ><img src="images/icons/user-round.svg" alt="" /><span
+            >Đăng nhập</span
+          ></a
+        >
+        <a class="top-link" href="gio-hang.html"
+          ><img src="images/icons/shopping-bag.svg" alt="" /><span
+            >Giỏ hàng</span
+          ><span class="cart-count" id="cartCount">0</span></a
+        >
+      </div>
+      <nav class="nav">
+        <a href="index.html">Trang chủ</a
+        ><a class="active" href="san-pham.html?category=laptop">Laptop</a
+        ><a href="san-pham.html?category=phone">Điện thoại</a
+        ><a href="san-pham.html?category=accessory">Phụ kiện</a
+        ><a href="san-pham.html?sort=sale">Khuyến mãi</a
+        ><span class="pledge"
+          ><img src="images/icons/shield-check.svg" alt="" />Chính hãng 100% ·
+          Bảo hành tận tâm</span
+        >
+      </nav>
+    </header>
+
+    <main class="page-shell catalog-page">
+      <div class="breadcrumbs">
+        <a href="index.html">Trang chủ</a><span>/</span><span>Cửa hàng</span>
+      </div>
+      <section class="page-heading">
+        <div>
+          <p class="eyebrow">CỬA HÀNG XUNG</p>
+          <h1>Thiết bị cho nhịp sống của bạn.</h1>
+          <p class="page-intro">
+            Chọn món công nghệ phù hợp, tận hưởng hiệu năng xứng tầm và dịch vụ
+            tận tâm.
+          </p>
+        </div>
+        <div class="catalog-count">
+          <strong id="resultCount">0</strong><span>sản phẩm</span>
+        </div>
+      </section>
+      <section class="catalog-layout" aria-label="Danh sách sản phẩm">
+        <aside class="catalog-sidebar">
+          <h2>Danh mục</h2>
+          <button class="category-filter active" data-category="all">
+            Tất cả sản phẩm
+          </button>
+          <button class="category-filter" data-category="laptop">Laptop</button>
+          <button class="category-filter" data-category="phone">
+            Điện thoại
+          </button>
+          <button class="category-filter" data-category="accessory">
+            Phụ kiện &amp; âm thanh
+          </button>
+          <div class="sidebar-note">
+            <img src="images/icons/badge-check.svg" alt="" /><b
+              >Mua sắm an tâm</b
+            ><span>Hàng chính hãng, bảo hành rõ ràng và hỗ trợ tận tâm.</span>
+          </div>
+        </aside>
+        <div class="catalog-main">
+          <div class="catalog-toolbar">
+            <label class="catalog-search"
+              ><img src="images/icons/search.svg" alt="" /><input
+                id="catalogSearch"
+                type="search"
+                placeholder="Tìm theo tên sản phẩm"
+            /></label>
+            <label class="sort-control"
+              ><span>Sắp xếp</span
+              ><select id="catalogSort">
+                <option value="featured">Nổi bật</option>
+                <option value="price-asc">Giá tăng dần</option>
+                <option value="price-desc">Giá giảm dần</option>
+                <option value="sale">Đang ưu đãi</option>
+              </select></label
+            >
+          </div>
+          <div class="grid-4 catalog-grid" id="catalogGrid"></div>
+          <div class="empty-state" id="catalogEmpty" hidden>
+            <strong>Chưa tìm thấy sản phẩm phù hợp</strong
+            ><span>Thử từ khóa khác hoặc chọn một danh mục khác nhé.</span>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-main">
+        <div class="footer-brand">
+          <a class="brand" href="index.html"
+            ><img src="images/icons/zap.svg" alt="" /><span class="brand-name"
+              >XUNG</span
+            ><span class="brand-dot"></span
+          ></a>
+          <p>
+            Công nghệ xứng tầm. Hiệu năng bứt phá. Đồng hành cùng lựa chọn tiếp
+            theo của bạn.
+          </p>
+          <p class="hotline">1800 6868 · 8:00–22:00 mỗi ngày</p>
+          <p class="contact">hello@xung.vn · 128 Nguyễn Huệ, TP. HCM</p>
+        </div>
+        <div class="footer-col">
+          <h4>Khám phá XUNG</h4>
+          <a href="san-pham.html">Cửa hàng</a><a href="index.html">Trang chủ</a>
+        </div>
+        <div class="footer-col">
+          <h4>Hỗ trợ khách hàng</h4>
+          <a href="gio-hang.html">Giỏ hàng</a><a href="#">Chính sách bảo hành</a
+          ><a href="#">Đổi trả &amp; hoàn tiền</a>
+        </div>
+        <div class="footer-col">
+          <h4>An tâm mua sắm</h4>
+          <a href="#">Chính sách bảo mật</a><a href="#">Điều khoản sử dụng</a
+          ><a href="#">Trả góp 0%</a>
+        </div>
+      </div>
+      <hr />
+      <div class="footer-legal">
+        <span>© 2026 XUNG. Công ty TNHH Công nghệ Xung.</span
+        ><span
+          >VISA &nbsp; / &nbsp; Mastercard &nbsp; / &nbsp; MoMo &nbsp; / &nbsp;
+          VNPAY</span
+        >
+      </div>
+    </footer>
+    <script src="js/api.js"></script>
+    <script src="js/store.js"></script>
+    <script src="js/auth.js"></script>
+  </body>
+</html>

@@ -1,0 +1,440 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Tài khoản | XUNG</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/pages.css" />
+  </head>
+  <body>
+    <header>
+      <div class="announce">
+        <span>NÂNG CẤP HIỆU NĂNG • Ưu đãi đến 4.000.000đ</span
+        ><a href="san-pham.html?sort=sale">Khám phá ngay →</a>
+      </div>
+      <div class="topbar">
+        <a class="brand" href="index.html"
+          ><img src="images/icons/zap.svg" alt="" /><span class="brand-name"
+            >XUNG</span
+          ><span class="brand-dot"></span
+        ></a>
+        <label class="search"
+          ><img src="images/icons/search.svg" alt="" /><input
+            type="search"
+            data-site-search
+            placeholder="Bạn đang tìm thiết bị nào?"
+          /><kbd>⌘ K</kbd></label
+        >
+        <div class="consult">
+          <img src="images/icons/headphones.svg" alt="" />
+          <div><small>Tư vấn miễn phí</small><strong>1800 6868</strong></div>
+        </div>
+        <a class="top-link" href="tai-khoan.html" data-account-link
+          ><img src="images/icons/user-round.svg" alt="" /><span
+            >Đăng nhập</span
+          ></a
+        >
+        <a class="top-link" href="gio-hang.html"
+          ><img src="images/icons/shopping-bag.svg" alt="" /><span
+            >Giỏ hàng</span
+          ><span class="cart-count" id="cartCount">0</span></a
+        >
+      </div>
+      <nav class="nav">
+        <a href="index.html">Trang chủ</a
+        ><a href="san-pham.html?category=laptop">Laptop</a
+        ><a href="san-pham.html?category=phone">Điện thoại</a
+        ><a href="san-pham.html?category=accessory">Phụ kiện</a
+        ><a href="san-pham.html?sort=sale">Khuyến mãi</a
+        ><span class="pledge"
+          ><img src="images/icons/shield-check.svg" alt="" />Chính hãng 100% ·
+          Bảo hành tận tâm</span
+        >
+      </nav>
+    </header>
+
+    <main class="page-shell account-page">
+      <div class="breadcrumbs">
+        <a href="index.html">Trang chủ</a><span>/</span><span>Tài khoản</span>
+      </div>
+      <section class="account-panel">
+        <div class="account-visual">
+          <img src="images/products/hero-blade-16.png" alt="" />
+          <div class="account-visual-copy">
+            <span class="account-kicker">XUNG MEMBER</span>
+            <h1>Công nghệ xứng tầm. Đặc quyền dành riêng cho bạn.</h1>
+            <p>
+              Theo dõi đơn hàng, lưu lựa chọn yêu thích và nhận ưu đãi phù hợp
+              với bạn.
+            </p>
+            <div class="account-perks">
+              <div><span>01</span><b>Quản lý đơn hàng dễ dàng</b></div>
+              <div><span>02</span><b>Cập nhật ưu đãi thành viên</b></div>
+              <div><span>03</span><b>Được hỗ trợ tận tâm hơn</b></div>
+            </div>
+          </div>
+        </div>
+        <div class="account-form-side">
+          <div class="account-form-wrap" id="accountForms">
+            <div class="account-heading">
+              <p class="eyebrow">XIN CHÀO BẠN</p>
+              <h2 id="authHeading">Đăng nhập</h2>
+              <p id="authIntro">
+                Trở lại với những lựa chọn công nghệ của bạn.
+              </p>
+            </div>
+            <div
+              class="auth-tabs"
+              role="tablist"
+              aria-label="Chọn hình thức tài khoản"
+            >
+              <button
+                type="button"
+                class="auth-tab active"
+                id="loginTab"
+                role="tab"
+                aria-selected="true"
+                aria-controls="loginForm"
+                data-auth-mode="login"
+              >
+                Đăng nhập
+              </button>
+              <button
+                type="button"
+                class="auth-tab"
+                id="registerTab"
+                role="tab"
+                aria-selected="false"
+                aria-controls="registerForm"
+                data-auth-mode="register"
+              >
+                Tạo tài khoản
+              </button>
+            </div>
+            <form
+              class="auth-form"
+              id="loginForm"
+              data-auth-form="login"
+              novalidate
+            >
+              <label class="auth-field"
+                ><span>Email</span
+                ><input
+                    name="email"
+                    type="email"
+                    autocomplete="email"
+                    placeholder="tenban@email.com"
+                    required
+                /></label>
+                <label class="auth-field"
+                  ><span>Mật khẩu</span
+                  ><input
+                  name="password"
+                  type="password"
+                  autocomplete="current-password"
+                  placeholder="Nhập mật khẩu"
+                  minlength="8"
+                  required
+              /></label>
+              <button class="auth-submit" type="submit">
+                Đăng nhập <span aria-hidden="true">→</span>
+              </button>
+              <p class="auth-switch-copy">
+                Chưa có tài khoản?
+                <button type="button" data-auth-mode="register">
+                  Đăng ký ngay
+                </button>
+              </p>
+            </form>
+            <form
+              class="auth-form"
+              id="registerForm"
+              data-auth-form="register"
+              hidden
+              novalidate
+            >
+              <label class="auth-field"
+                ><span>Họ và tên</span
+                ><input
+                  name="name"
+                  type="text"
+                  autocomplete="name"
+                  placeholder="Tên của bạn"
+                  minlength="2"
+                  required
+              /></label>
+              <label class="auth-field"
+                ><span>Email</span
+                ><input
+                  name="email"
+                  type="email"
+                  autocomplete="email"
+                  placeholder="tenban@email.com"
+                  required
+              /></label>
+              <label class="auth-field"
+                ><span>Số điện thoại</span
+                ><input
+                  name="phone"
+                  type="tel"
+                  autocomplete="tel"
+                  inputmode="numeric"
+                  placeholder="10 chữ số"
+                  pattern="[0-9]{10}"
+                  minlength="10"
+                  maxlength="10"
+                  required
+              /></label>
+              <label class="auth-field"
+                ><span>Địa chỉ</span
+                ><input
+                  name="address"
+                  type="text"
+                  autocomplete="street-address"
+                  placeholder="Số nhà, đường, phường/xã, quận/huyện, tỉnh/thành"
+                  maxlength="300"
+                  required
+              /></label>
+              <label class="auth-field"
+                ><span>Giới tính</span
+                ><select name="gender" required>
+                  <option value="" selected disabled>Chọn giới tính</option>
+                  <option value="male">Nam</option>
+                  <option value="female">Nữ</option>
+                  <option value="other">Khác</option>
+                  <option value="unspecified">Không muốn trả lời</option>
+                </select>
+              </label>
+              <label class="auth-field"
+                ><span>Số CCCD <small>(không bắt buộc)</small></span
+                ><input
+                  name="identityNumber"
+                  type="text"
+                  inputmode="numeric"
+                  autocomplete="off"
+                  placeholder="12 chữ số"
+                  pattern="[0-9]{12}"
+                  minlength="12"
+                  maxlength="12"
+              /></label>
+              <label class="auth-field"
+                ><span>Mật khẩu</span
+                ><input
+                  name="password"
+                  type="password"
+                  autocomplete="new-password"
+                  placeholder="Tối thiểu 8 ký tự"
+                  minlength="8"
+                  required
+              /></label>
+              <label class="auth-field"
+                ><span>Xác nhận mật khẩu</span
+                ><input
+                  name="confirmPassword"
+                  type="password"
+                  autocomplete="new-password"
+                  placeholder="Nhập lại mật khẩu"
+                  minlength="8"
+                  required
+              /></label>
+              <label class="auth-consent"
+                ><input name="consent" type="checkbox" required /><span
+                  >Tôi đồng ý với điều khoản sử dụng và chính sách bảo mật của
+                  XUNG.</span
+                ></label
+              >
+              <button class="auth-submit" type="submit">
+                Tạo tài khoản <span aria-hidden="true">→</span>
+              </button>
+              <p class="auth-switch-copy">
+                Đã có tài khoản?
+                <button type="button" data-auth-mode="login">Đăng nhập</button>
+              </p>
+            </form>
+            <p
+              class="auth-message"
+              id="authMessage"
+              role="status"
+              aria-live="polite"
+            ></p>
+            <p class="auth-demo-note">
+              Mật khẩu được băm bằng bcrypt trước khi lưu. Phiên đăng nhập được quản lý
+              an toàn qua máy chủ.
+            </p>
+          </div>
+          <section class="account-signed-in" id="accountSignedIn" hidden>
+            <p class="eyebrow">TÀI KHOẢN XUNG</p>
+            <div class="account-avatar" id="accountAvatar">X</div>
+            <h2>Thông tin tài khoản</h2>
+            <p class="signed-email" id="accountEmail"></p>
+            <p class="signed-copy">
+              Thông tin hồ sơ của bạn
+            </p>
+            <section class="profile-details" id="profileDetails" aria-label="Thông tin cá nhân">
+              <dl class="profile-list">
+                <div><dt>Họ và tên</dt><dd id="profileName">—</dd></div>
+                <div><dt>Số điện thoại</dt><dd id="profilePhone">—</dd></div>
+                <div><dt>Địa chỉ</dt><dd id="profileAddress">—</dd></div>
+                <div><dt>Giới tính</dt><dd id="profileGender">—</dd></div>
+                <div><dt>Email</dt><dd id="profileEmail">—</dd></div>
+                <div><dt>CCCD</dt><dd id="profileIdentityNumber">—</dd></div>
+              </dl>
+              <button class="auth-submit" type="button" id="editProfileButton">
+                Thay đổi thông tin <span aria-hidden="true">→</span>
+              </button>
+            </section>
+            <form class="profile-form" id="profileForm" novalidate hidden>
+              <label class="auth-field"
+                ><span>Họ và tên</span
+                ><input
+                  name="name"
+                  type="text"
+                  autocomplete="name"
+                  minlength="2"
+                  maxlength="160"
+                  required
+              /></label>
+              <label class="auth-field"
+                ><span>Giới tính</span
+                ><select name="gender" required>
+                  <option value="male">Nam</option>
+                  <option value="female">Nữ</option>
+                  <option value="other">Khác</option>
+                  <option value="unspecified">Không muốn trả lời</option>
+              </select></label>
+              <label class="auth-field"
+                ><span>Số điện thoại</span
+                ><input
+                  name="phone"
+                  type="tel"
+                  autocomplete="tel"
+                  inputmode="numeric"
+                  pattern="[0-9]{10}"
+                  minlength="10"
+                  maxlength="10"
+                  required
+              /></label>
+              <label class="auth-field"
+                ><span>Địa chỉ</span
+                ><input
+                  name="address"
+                  type="text"
+                  autocomplete="street-address"
+                  maxlength="300"
+                  required
+              /></label>
+              <label class="auth-field"
+                ><span>Số CCCD <small>(12 chữ số, không bắt buộc)</small></span
+                ><input
+                  name="identityNumber"
+                  type="text"
+                  inputmode="numeric"
+                  autocomplete="off"
+                  pattern="[0-9]{12}"
+                  minlength="12"
+                  maxlength="12"
+                  placeholder="Để trống nếu không muốn thay đổi"
+              /></label>
+              <button class="auth-submit" type="submit" id="profileSaveButton">
+                Lưu thay đổi <span aria-hidden="true">→</span>
+              </button>
+              <button class="btn btn-secondary profile-cancel" type="button" id="cancelProfileButton">
+                Hủy
+              </button>
+            </form>
+            <section class="account-orders" id="accountOrdersSection" aria-labelledby="accountOrdersTitle">
+              <div class="account-orders-heading">
+                <div>
+                  <h3 id="accountOrdersTitle">Đơn hàng của bạn</h3>
+                  <p>Theo dõi trạng thái giao hàng và xem lại hóa đơn.</p>
+                </div>
+                <button class="account-orders-refresh" id="refreshOrdersButton" type="button">Làm mới</button>
+              </div>
+              <div class="account-orders-list" id="accountOrders" aria-live="polite" aria-busy="true">
+                <p class="account-orders-state">Đang tải đơn hàng...</p>
+              </div>
+            </section>
+            <p
+              class="auth-message profile-message"
+              id="profileMessage"
+              role="status"
+              aria-live="polite"
+              hidden
+            ></p>
+            <div class="signed-actions">
+              <a class="btn btn-primary" href="san-pham.html"
+                >Khám phá cửa hàng</a
+              ><button
+                type="button"
+                class="btn btn-secondary"
+                id="logoutButton"
+              >
+                Đăng xuất
+              </button>
+            </div>
+            <p
+              class="auth-message"
+              id="logoutMessage"
+              role="status"
+              aria-live="polite"
+            ></p>
+          </section>
+        </div>
+      </section>
+      <p class="account-security-note">
+        <img src="images/icons/shield-check.svg" alt="" />Thông tin tài khoản
+        được xử lý bởi API của XUNG và lưu trong SQL Server.
+      </p>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-main">
+        <div class="footer-brand">
+          <a class="brand" href="index.html"
+            ><img src="images/icons/zap.svg" alt="" /><span class="brand-name"
+              >XUNG</span
+            ><span class="brand-dot"></span
+          ></a>
+          <p>
+            Công nghệ xứng tầm. Hiệu năng bứt phá. Đồng hành cùng lựa chọn tiếp
+            theo của bạn.
+          </p>
+          <p class="hotline">1800 6868 · 8:00–22:00 mỗi ngày</p>
+          <p class="contact">hello@xung.vn · 128 Nguyễn Huệ, TP. HCM</p>
+        </div>
+        <div class="footer-col">
+          <h4>Khám phá XUNG</h4>
+          <a href="san-pham.html">Cửa hàng</a><a href="index.html">Trang chủ</a>
+        </div>
+        <div class="footer-col">
+          <h4>Hỗ trợ khách hàng</h4>
+          <a href="gio-hang.html">Giỏ hàng</a><a href="#">Chính sách bảo hành</a
+          ><a href="#">Đổi trả &amp; hoàn tiền</a>
+        </div>
+        <div class="footer-col">
+          <h4>An tâm mua sắm</h4>
+          <a href="#">Chính sách bảo mật</a><a href="#">Điều khoản sử dụng</a
+          ><a href="#">Trả góp 0%</a>
+        </div>
+      </div>
+      <hr />
+      <div class="footer-legal">
+        <span>© 2026 XUNG. Công ty TNHH Công nghệ Xung.</span
+        ><span
+          >VISA &nbsp; / &nbsp; Mastercard &nbsp; / &nbsp; MoMo &nbsp; / &nbsp;
+          VNPAY</span
+        >
+      </div>
+    </footer>
+    <script src="js/api.js"></script>
+    <script src="js/store.js"></script>
+    <script src="js/auth.js"></script>
+  </body>
+</html>

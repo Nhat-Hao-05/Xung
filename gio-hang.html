@@ -1,0 +1,244 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Giỏ hàng | XUNG</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/pages.css" />
+  </head>
+  <body>
+    <header>
+      <div class="announce">
+        <span>NÂNG CẤP HIỆU NĂNG • Ưu đãi đến 4.000.000đ</span
+        ><a href="san-pham.html?sort=sale">Khám phá ngay →</a>
+      </div>
+      <div class="topbar">
+        <a class="brand" href="index.html"
+          ><img src="images/icons/zap.svg" alt="" /><span class="brand-name"
+            >XUNG</span
+          ><span class="brand-dot"></span
+        ></a>
+        <label class="search"
+          ><img src="images/icons/search.svg" alt="" /><input
+            type="search"
+            data-site-search
+            placeholder="Bạn đang tìm thiết bị nào?"
+          /><kbd>⌘ K</kbd></label
+        >
+        <div class="consult">
+          <img src="images/icons/headphones.svg" alt="" />
+          <div><small>Tư vấn miễn phí</small><strong>1800 6868</strong></div>
+        </div>
+        <a class="top-link" href="tai-khoan.html" data-account-link
+          ><img src="images/icons/user-round.svg" alt="" /><span
+            >Đăng nhập</span
+          ></a
+        >
+        <a class="top-link" href="gio-hang.html"
+          ><img src="images/icons/shopping-bag.svg" alt="" /><span
+            >Giỏ hàng</span
+          ><span class="cart-count" id="cartCount">0</span></a
+        >
+      </div>
+      <nav class="nav">
+        <a href="index.html">Trang chủ</a
+        ><a href="san-pham.html?category=laptop">Laptop</a
+        ><a href="san-pham.html?category=phone">Điện thoại</a
+        ><a href="san-pham.html?category=accessory">Phụ kiện</a
+        ><a href="san-pham.html?sort=sale">Khuyến mãi</a
+        ><span class="pledge"
+          ><img src="images/icons/shield-check.svg" alt="" />Chính hãng 100% ·
+          Bảo hành tận tâm</span
+        >
+      </nav>
+    </header>
+
+    <main class="page-shell cart-page">
+      <div class="breadcrumbs">
+        <a href="index.html">Trang chủ</a><span>/</span><span>Giỏ hàng</span>
+      </div>
+      <div class="page-heading cart-heading">
+        <div>
+          <p class="eyebrow">ĐƠN HÀNG CỦA BẠN</p>
+          <h1>Giỏ hàng</h1>
+          <p class="page-intro">
+            Kiểm tra lại lựa chọn của bạn trước khi tiếp tục.
+          </p>
+        </div>
+      </div>
+      <div class="cart-layout">
+        <section class="cart-content">
+          <div class="cart-table-head">
+            <span>Sản phẩm</span><span>Đơn giá</span><span>Số lượng</span
+            ><span>Tạm tính</span>
+          </div>
+          <div id="cartItems"></div>
+          <div class="empty-state" id="cartEmpty" hidden>
+            <strong>Giỏ hàng đang trống</strong
+            ><span>Bắt đầu khám phá những món công nghệ bạn yêu thích.</span
+            ><a class="btn btn-primary" href="san-pham.html"
+              >Đến cửa hàng <img src="images/icons/arrow-up-right.svg" alt=""
+            /></a>
+          </div>
+          <a class="continue-shopping" href="san-pham.html"
+            >← Tiếp tục mua sắm</a
+          >
+        </section>
+        <aside class="order-summary">
+          <h2>Tóm tắt đơn hàng</h2>
+          <div class="summary-line">
+            <span>Tạm tính</span><strong id="subtotal">0đ</strong>
+          </div>
+          <div class="summary-line">
+            <span>Phí giao hàng</span
+            ><strong class="free-shipping">Miễn phí</strong>
+          </div>
+          <div class="summary-total">
+            <span>Tổng cộng</span><strong id="grandTotal">0đ</strong>
+          </div>
+          <p>Thuế đã bao gồm trong giá sản phẩm.</p>
+          <button
+            class="btn btn-primary checkout-button"
+            id="checkoutButton"
+            type="button"
+          >
+            Tiến hành thanh toán
+            <img src="images/icons/arrow-up-right.svg" alt="" />
+          </button>
+          <div class="secure-note">
+            <img src="images/icons/shield-check.svg" alt="" />Thanh toán an toàn
+            và bảo mật
+          </div>
+        </aside>
+      </div>
+    </main>
+
+    <dialog class="checkout-dialog" id="checkoutDialog">
+      <form class="checkout-form" id="checkoutForm">
+        <div class="checkout-dialog-head">
+          <div><p class="eyebrow">HOÀN TẤT ĐƠN HÀNG</p><h2>Thông tin giao hàng</h2></div>
+          <button class="dialog-close" type="button" data-close-checkout aria-label="Đóng">×</button>
+        </div>
+        <label class="auth-field"><span>Họ và tên</span><input name="name" autocomplete="name" required maxlength="160"></label>
+        <div class="checkout-fields-row">
+          <label class="auth-field"><span>Email</span><input name="email" type="email" autocomplete="email" required maxlength="254"></label>
+          <label class="auth-field"><span>Số điện thoại</span><input name="phone" type="tel" autocomplete="tel" required maxlength="30"></label>
+        </div>
+        <label class="auth-field"><span>Địa chỉ nhận hàng</span><input name="address" autocomplete="street-address" required maxlength="500"></label>
+        <div class="checkout-fields-row">
+          <label class="auth-field"><span>Phường / xã</span><input name="ward" maxlength="120"></label>
+          <label class="auth-field"><span>Quận / huyện</span><input name="district" maxlength="120"></label>
+        </div>
+        <label class="auth-field"><span>Tỉnh / thành phố</span><input name="city" autocomplete="address-level1" required maxlength="120"></label>
+        <label class="auth-field"><span>Phương thức thanh toán</span><select name="paymentMethod"><option value="cod">Thanh toán khi nhận hàng</option><option value="bank_transfer">Chuyển khoản</option></select></label>
+        <label class="auth-field"><span>Ghi chú</span><textarea name="note" rows="2" maxlength="1000"></textarea></label>
+        <p class="checkout-message" id="checkoutMessage" role="status" aria-live="polite"></p>
+        <button class="btn btn-primary checkout-submit" type="submit">Đặt hàng</button>
+      </form>
+    </dialog>
+
+    <dialog class="receipt-dialog" id="receiptDialog" aria-labelledby="receiptTitle">
+      <article class="receipt-sheet" id="receiptContent">
+        <header class="receipt-header">
+          <a class="brand receipt-brand" href="index.html">
+            <img src="images/icons/zap.svg" alt="" />
+            <span class="brand-name">XUNG</span>
+            <span class="brand-dot"></span>
+          </a>
+          <div class="receipt-shop-contact">
+            <span>Hóa đơn bán hàng</span>
+            <span>1800 6868 · hello@xung.vn</span>
+          </div>
+        </header>
+        <div class="receipt-title-block">
+          <div>
+            <p class="eyebrow">ĐẶT HÀNG THÀNH CÔNG</p>
+            <h2 id="receiptTitle">Hóa đơn của bạn</h2>
+          </div>
+          <span class="receipt-status">Đang chờ xác nhận</span>
+        </div>
+        <div class="receipt-meta">
+          <div><span>Mã đơn hàng</span><strong id="receiptNumber"></strong></div>
+          <div><span>Ngày đặt</span><strong id="receiptDate"></strong></div>
+        </div>
+        <section class="receipt-customer">
+          <h3>Thông tin nhận hàng</h3>
+          <p id="receiptCustomer"></p>
+          <p id="receiptPhone"></p>
+          <p id="receiptAddress"></p>
+          <p id="receiptPayment"></p>
+        </section>
+        <div class="receipt-items-wrap">
+          <table class="receipt-items">
+            <thead>
+              <tr><th>Sản phẩm</th><th>Đơn giá</th><th>SL</th><th>Thành tiền</th></tr>
+            </thead>
+            <tbody id="receiptItems"></tbody>
+          </table>
+        </div>
+        <dl class="receipt-totals">
+          <div><dt>Tạm tính</dt><dd id="receiptSubtotal"></dd></div>
+          <div><dt>Phí giao hàng</dt><dd id="receiptShipping"></dd></div>
+          <div><dt>Giảm giá</dt><dd id="receiptDiscount"></dd></div>
+          <div class="receipt-grand-total"><dt>Tổng thanh toán</dt><dd id="receiptTotal"></dd></div>
+        </dl>
+        <p class="receipt-note" id="receiptNote" hidden></p>
+        <p class="receipt-thanks">Cảm ơn bạn đã mua sắm tại XUNG.</p>
+        <footer class="receipt-actions">
+          <button class="btn btn-primary" type="button" id="printReceiptButton">In hóa đơn</button>
+          <button class="btn btn-secondary" type="button" id="closeReceiptButton">Đóng</button>
+        </footer>
+      </article>
+    </dialog>
+
+    <footer class="footer">
+      <div class="footer-main">
+        <div class="footer-brand">
+          <a class="brand" href="index.html"
+            ><img src="images/icons/zap.svg" alt="" /><span class="brand-name"
+              >XUNG</span
+            ><span class="brand-dot"></span
+          ></a>
+          <p>
+            Công nghệ xứng tầm. Hiệu năng bứt phá. Đồng hành cùng lựa chọn tiếp
+            theo của bạn.
+          </p>
+          <p class="hotline">1800 6868 · 8:00–22:00 mỗi ngày</p>
+          <p class="contact">hello@xung.vn · 128 Nguyễn Huệ, TP. HCM</p>
+        </div>
+        <div class="footer-col">
+          <h4>Khám phá XUNG</h4>
+          <a href="san-pham.html">Cửa hàng</a><a href="index.html">Trang chủ</a>
+        </div>
+        <div class="footer-col">
+          <h4>Hỗ trợ khách hàng</h4>
+          <a href="gio-hang.html">Giỏ hàng</a><a href="#">Chính sách bảo hành</a
+          ><a href="#">Đổi trả &amp; hoàn tiền</a>
+        </div>
+        <div class="footer-col">
+          <h4>An tâm mua sắm</h4>
+          <a href="#">Chính sách bảo mật</a><a href="#">Điều khoản sử dụng</a
+          ><a href="#">Trả góp 0%</a>
+        </div>
+      </div>
+      <hr />
+      <div class="footer-legal">
+        <span>© 2026 XUNG. Công ty TNHH Công nghệ Xung.</span
+        ><span
+          >VISA &nbsp; / &nbsp; Mastercard &nbsp; / &nbsp; MoMo &nbsp; / &nbsp;
+          VNPAY</span
+        >
+      </div>
+    </footer>
+    <script src="js/api.js"></script>
+    <script src="js/store.js"></script>
+    <script src="js/auth.js"></script>
+  </body>
+</html>
