@@ -19,7 +19,7 @@ if (!sessionSecret) {
   throw new Error("SESSION_SECRET is required when NODE_ENV=production.");
 }
 
-const sqlServer = process.env.SQL_SERVER || "MSI\\SQLEXPRESS";
+const sqlServer = process.env.SQL_SERVER || "MSI";
 const sqlDatabase = process.env.SQL_DATABASE || "XUNGStore";
 const sqlDriver = process.env.SQL_DRIVER || "ODBC Driver 17 for SQL Server";
 const connectionString = [

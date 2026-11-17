@@ -10,7 +10,7 @@ API dùng Node.js, Express và SQL Server. Website được phục vụ cùng or
 4. Mở `http://localhost:3000`.
 5. Kiểm tra API tại `http://localhost:3000/api/health`.
 
-Mặc định server kết nối `MSI\SQLEXPRESS`, database `XUNGStore`, bằng Windows Authentication của tài khoản Windows đang chạy `npm start`. Có thể chỉnh các biến `SQL_SERVER`, `SQL_DATABASE`, `SQL_DRIVER`, `PORT` và `SESSION_SECRET` trong `.env`. Không đặt mật khẩu SQL trong JavaScript phía trình duyệt.
+Mặc định server kết nối instance SQL Server `MSI`, database `XUNGStore`, bằng Windows Authentication của tài khoản Windows đang chạy `npm start`. Có thể chỉnh các biến `SQL_SERVER`, `SQL_DATABASE`, `SQL_DRIVER`, `PORT` và `SESSION_SECRET` trong `.env`. Không đặt mật khẩu SQL trong JavaScript phía trình duyệt.
 
 `msnodesqlv8` cần ODBC Driver for SQL Server có trên máy. Nếu API báo lỗi driver/ODBC, cài Microsoft ODBC Driver 17 hoặc 18 for SQL Server rồi khởi động lại API.
 
@@ -76,5 +76,6 @@ API không tự tạo database. `XUNGStore` và các bảng cần có sẵn; tà
 
 - Mật khẩu tài khoản được hash bằng bcrypt trước khi lưu.
 - Session cookie là `httpOnly`, được bảo vệ bằng rate limit ở endpoint đăng nhập/đăng ký.
+- Live chat tawk.to được nhúng trên các trang qua `js/support-chat.js`. Widget tải JavaScript từ dịch vụ bên thứ ba.
 - Session store mặc định trong RAM chỉ phù hợp chạy local/demo; khi triển khai thật cần store bền vững, HTTPS, `SESSION_SECRET` riêng và tài khoản database quyền tối thiểu.
 - Không đưa file `.env` hoặc mật khẩu vào Git.
